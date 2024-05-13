@@ -1,18 +1,19 @@
-import './Main.css';
+import styled from 'styled-components';
+import React, { useState, useEffect } from "react";
+import Menu from '../Menu/Menu';
+import Banner from '../Banner/Banner';
 
-function Main() {
 
+
+function Main({isWide}) {
   
   return (
     <main className="content">
-      <section className="">
-        
-      </section>
+      {isWide && <Menu/>}
+      <Banner></Banner>
 
     </main>
   );
 }
 
 export default Main;
-
-// background-color: ${({ theme }) => theme.colors.mainBackground};

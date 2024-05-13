@@ -5,7 +5,7 @@ export const useResize = () => {
 
   useEffect(() => {
     const handleResize = (event) => {
-          setWidth(event.target.innerWidth);
+      setWidth(event.target.innerWidth);
     };
     window.addEventListener('resize', handleResize);
     return () => {
@@ -13,5 +13,5 @@ export const useResize = () => {
     };
   }, []);
 
-  return width >= 600 ? true : false;
+  return width >= 1035 ? true : false;
 };

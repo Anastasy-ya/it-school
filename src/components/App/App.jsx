@@ -5,41 +5,31 @@ import Footer from "../Footer/Footer";
 import styled, { ThemeProvider } from 'styled-components';
 import { useResize } from "../../components/hooks/useResize";
 import React, { useState, useEffect } from "react";
-import Burger from '../Burger/Burger';
+import GlobalStyle from '../../global/global';
+import theme from '../../theme/theme';
+
 
 function App() {
 
-  const theme = {
-    colors: {
-      mainBackground: 'rgba(217, 217, 217, 1)',
-      secondaryBackground: 'rgba(102, 102, 102, 1)',
-      blue: 'rgba(51, 153, 255, 1)',
-      violet: 'rgba(153, 102, 255, 1)'
-    }
-  };
-
   const isWide = useResize();
 
-  const [isOpenPopup, setIsOpenPopup] = React.useState(false);
+  
 
-  function handleOpenClosePopup() {
-    setIsOpenPopup(!isOpenPopup);
-  }
+  
 
   return (
     <ThemeProvider theme={theme}>
+      <GlobalStyle />
       <div className="page">
 
-        <Header>
-          { console.log(isWide)}
-          {  isWide ?
-            <p>Тут будет кнопка</p> :
-            <Burger
-              handleOpenClosePopup={handleOpenClosePopup}
-              isOpenPopup={isOpenPopup}
-            ></Burger>}
+        <Header 
+          isWide={isWide}
+        >
+          
         </Header>
-        <Main />
+        <Main 
+          isWide={isWide}
+        />
         <Footer />
 
       </div>

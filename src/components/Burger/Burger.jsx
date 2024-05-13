@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styled from 'styled-components';
 
-const Div = styled.div`
+const Div = styled.nav`
   width: 16px;
   height: 16px;
   position: relative;
@@ -14,14 +14,14 @@ const Div = styled.div`
   padding: 0;  
   margin: 0;
 
-  @media(min-width: 600px) {
+  @media(min-width: 672px) {
     width: 26px;
   }
 `
 const Span = styled.span`
   /*средний штрих*/
   height: 2px;
-  width: 100%;
+  width: 26px;
   background: ${props =>
     props.$isOpenPopup ? 'transparent' : 'white'
   };
@@ -35,16 +35,16 @@ const Span = styled.span`
     position: absolute;
     content: "";
     height: 2px;
-    width: 100%;
+    width: 26px;
     background-color: white;
     transition: transform 0.25s, top 0.25s 0.25s;
     ${props => (
-      props.$isOpenPopup ? {
+    props.$isOpenPopup ? {
       transition: 'top 0.25s, transform 0.25s 0.25s',
       transform: 'rotateZ(-45deg)',
       color: 'red',
       top: '0',
-      } : { top: '-6px' }
+    } : { top: '-6px' }
   )}
   }
 
@@ -53,7 +53,7 @@ const Span = styled.span`
     position: absolute;
     content: "";
     height: 2px;
-    width: 100%;
+    width: 26px;
     background-color: white;
     transition: transform 0.25s, top 0.25s 0.25s;
     ${props => (
@@ -62,8 +62,8 @@ const Span = styled.span`
       transform: 'rotateZ(45deg)',
       color: 'red',
       top: '0',
-    } : { 
-      top: '6px', 
+    } : {
+      top: '6px',
     }
   )}
   }
