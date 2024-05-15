@@ -58,8 +58,8 @@ function Header(props) {
         <img src={logo} alt="logo"></img>
         {props.isWide ?
           <StyledButton
-            width='150px'
-            height='25px'
+            $width='150px'
+            $height='25px'
             type='submit'
             aria-label='Записаться'
             disabled={false}

@@ -92,7 +92,7 @@ const Label = styled.label`
     line-height: 32px;
     transition: .5s ease;
     position: absolute;
-    top: ${props => (props.top)};
+    top: ${props => (props.$top)};
     left: 16px;
     pointer-events: none;
     /* visibility: hidden; */
@@ -217,7 +217,7 @@ function Form(props) {
             и администраторами, задать свои вопросы.
           </h1>
 
-          <Label htmlFor='Имя' top='44px'>
+          <Label htmlFor='Имя' $top='44px'>
             Имя
           </Label>
           <Input
@@ -237,7 +237,7 @@ function Form(props) {
             {errors ? errors['Имя'] : ''}
           </Span>
 
-          <Label htmlFor='Телефон' top='103px'>
+          <Label htmlFor='Телефон' $top='103px'>
             Телефон
           </Label>
           <Input
@@ -257,7 +257,7 @@ function Form(props) {
             {errors ? errors['Телефон'] : ''}
           </Span>
 
-          <Label htmlFor='Филиал' top='152px' id='label'>
+          <Label htmlFor='Филиал' $top='152px' id='label'>
             Филиал
           </Label>
           <Select

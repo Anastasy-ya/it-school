@@ -48,7 +48,7 @@ function Card(props) {
 
     <Container>
       <Background>
-        <StyledIcon src={props.src}></StyledIcon>
+        <StyledIcon src={props.src} alt='icon'></StyledIcon>
       </Background>
       <TextBlock>
         <h3>{props.title}</h3>
