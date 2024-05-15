@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import React from "react";
 import { Box } from '../Section/Section';
 
-const NavBackground = styled.div`
+const NavBackground = styled.nav`
   width: 100%;
   display: flex;
   justify-content: center;
