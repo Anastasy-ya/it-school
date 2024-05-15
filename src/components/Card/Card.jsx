@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import React, { useState, useEffect } from "react";
+import React from "react";
 
 const Container = styled.div`
   width: 256px;
@@ -24,11 +24,7 @@ const StyledIcon = styled.img`
   max-height: 40px;
   margin: 0;
   padding: 0;
-  /* background-repeat: no-repeat;
-  background-position: 20%;
-  background-size: 20%;
-  box-sizing: border-box; */
-`
+`;
 
 const TextBlock = styled.div`
   & h3 {

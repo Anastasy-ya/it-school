@@ -4,6 +4,7 @@ const theme = {
     secondaryGray: 'rgba(102, 102, 102, 1)',
     blue: 'rgba(51, 153, 255, 1)',
     violet: 'rgba(153, 102, 255, 1)',
+    lightGrey: 'rgba(228, 228, 228, 1)',
     gradient: 'linear-gradient(rgba(153, 102, 255, 1), rgba(51, 153, 255, 1));',
   }
 };

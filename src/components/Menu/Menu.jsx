@@ -1,25 +1,30 @@
 import styled from 'styled-components';
-import React, { useState, useEffect } from "react";
-import { Section, Box } from '../Section/Section';
+import React from "react";
+import { Box } from '../Section/Section';
 
-const MenuSection = styled.nav`
+const NavBackground = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: ${({ theme }) => theme.colors.mainBackground};
+  align-items: center;
+`;
+
+const MenuSection = styled.div`
   height: 48px;
   max-width: 960px;
   margin: 0;
   width: 100%;
-  /* padding: 0 160px; */
-  padding: 0 160px;
-  /* box-sizing: border-box; */
 
-
-  
   & ul {
     width: 100%;
-    height: 40px;
+    height: 100%;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(auto, auto));
     grid-auto-flow: column;
     max-width: 960px;
+    align-items: center;
+    margin: 0;
   }
 
   & li {
@@ -36,37 +41,35 @@ const MenuSection = styled.nav`
 
 function Menu() {
 
-
-
   return (
-    <Section backgroundColor={({ theme }) => theme.colors.mainBackground}>
-      {/* <Box> */}
-      <MenuSection>
-      {/*TODO вынести в массив вконстанты, пройтись функцией map для отображения */}
-        <ul>
-          <li>
-          {/*ссылки */}{/* <a href="#home">Home</a> */}
-            СМЕНЫ
-          </li>
-          <li>
-            ФОРМАТЫ
-          </li>
-          <li>
-            МАСТЕР-КЛАССЫ
-          </li>
-          <li>
-            ЭКСКУРСИИ
-          </li>
-          <li>
-            ПРЕПОДАВАТЕЛИ
-          </li>
-          <li>
-            РАСПИСАНИЕ
-          </li>
-        </ul>
+    <NavBackground>
+      <Box>
+        <MenuSection>
+          {/*TODO вынести в массив вконстанты, пройтись функцией map для отображения */}
+          <ul>
+            <li>
+              {/*ссылки */}{/* <a href="#home">Home</a> */}
+              СМЕНЫ
+            </li>
+            <li>
+              ФОРМАТЫ
+            </li>
+            <li>
+              МАСТЕР-КЛАССЫ
+            </li>
+            <li>
+              ЭКСКУРСИИ
+            </li>
+            <li>
+              ПРЕПОДАВАТЕЛИ
+            </li>
+            <li>
+              РАСПИСАНИЕ
+            </li>
+          </ul>
         </MenuSection>
-      {/* </Box> */}
-    </Section>
+      </Box>
+    </NavBackground>
   );
 }
 

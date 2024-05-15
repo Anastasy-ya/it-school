@@ -32,6 +32,10 @@ const GlobalStyle = createGlobalStyle`
     min-width: 300px;
   }
 
+  .content {
+    overflow: hidden;
+  }
+
   p,
   a,
   h1,
@@ -46,7 +50,9 @@ const GlobalStyle = createGlobalStyle`
   label,
   li,
   span,
-  pre {
+  pre,
+  legend,
+  select {
     margin: 0;
     padding: 0;
     font-optical-sizing: auto;
@@ -57,19 +63,13 @@ const GlobalStyle = createGlobalStyle`
     color: white;
   }
 
-  /*стили автозаполнения*/
-  :-webkit-autofill,
-  :-webkit-autofill:hover, 
-  :-webkit-autofill:focus {
-    border-bottom: 2px solid var(--blue); /*TODO поменять цвет*/
-    -webkit-text-fill-color: white;
-    -webkit-box-shadow: 0 0 0px 1000px var(--main-background) inset;
-    transition: background-color 5000s ease-in-out 0.2s;
+  input:focus, select:focus {
+    outline: none;
   }
 
-  input:focus {
-    border-bottom: 2px solid var(--blue);  /*TODO поменять цвет*/
-  }
+  input:invalid {
+  color: red;
+}
 
   /*стилизация кнопок при наведении*/
   button:enabled { /*до модификации*/
@@ -83,7 +83,7 @@ const GlobalStyle = createGlobalStyle`
 
   button:disabled { /*не активна*/
     background-color: gray;
-    color: var(--middle-grey); /*TODO поменять цвет*/
+    color: white;
   }
 
   /*стилизация линков при наведении*/
@@ -98,8 +98,6 @@ const GlobalStyle = createGlobalStyle`
 
   ul {
     list-style: none;
-    margin: 0;
-    padding: 0;
   }
 `;
 

@@ -1,10 +1,9 @@
-// import './Header.css';
 import React, { useState, useEffect } from "react";
 import styled from 'styled-components';
 import logo from '../../images/logo.svg';
 import Burger from '../Burger/Burger';
-
-
+import { StyledButton } from '../StyledButton/StyledButton';
+import useFormWithValidation from "../hooks/usevalidate"; //TODO вынести на верхний уровень
 
 const StyledHeader = styled.header` /* TODO вынести в отдельный модуль для дублирования стилей в footer */
   height: 33px;
@@ -29,7 +28,6 @@ const StyledHeader = styled.header` /* TODO вынести в отдельный
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    /* display: inline-flex; */
   }
 
   & img {
@@ -44,11 +42,11 @@ const StyledHeader = styled.header` /* TODO вынести в отдельный
   }
 `;
 
-
-
 function Header(props) {
 
   const [isOpenPopup, setIsOpenPopup] = React.useState(false);
+
+  const { values, handleChange, errors, isValid, resetForm } = useFormWithValidation();
 
   function handleOpenClosePopup() {
     setIsOpenPopup(!isOpenPopup);
@@ -59,7 +57,15 @@ function Header(props) {
       <div>
         <img src={logo} alt="logo"></img>
         {props.isWide ?
-          <p>Тут будет кнопка</p> :
+          <StyledButton
+            width='150px'
+            height='25px'
+            type='submit'
+            aria-label='Записаться'
+            disabled={false}
+          >
+            ЗАПИСАТЬСЯ
+          </StyledButton> :
           <Burger
             handleOpenClosePopup={handleOpenClosePopup}
             isOpenPopup={isOpenPopup}

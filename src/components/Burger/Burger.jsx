@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import styled from 'styled-components';
 
+// разобраться почему происходит переход свойств от родительского див, 
+// переделать в див
 const Div = styled.nav`
   width: 16px;
   height: 16px;
