@@ -1,6 +1,2 @@
-.montserrat {
-  font-family: "Montserrat", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-}
+@import url(../../vendor/normalize.css);
+@import url(../../fonts/fonts.css);
