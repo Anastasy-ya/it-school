@@ -13,12 +13,15 @@ const StyledHeader = styled.header` /* TODO вынести в отдельный
   display: flex;
   align-items: center;
   justify-content: center;
+  box-sizing: border-box;
   
   @media(min-width: 672px) {
     padding: 0 68px;
     height: 64px;
+    
   }
   @media(min-width: 952px) {
+    flex-direction: column;
     padding: 0 160px;
   }
 
@@ -28,6 +31,10 @@ const StyledHeader = styled.header` /* TODO вынести в отдельный
     justify-content: space-between;
     align-items: center;
     width: 100%;
+
+    @media(min-width: 672px) {
+    max-width: 608px;
+  }
   }
 
   & img {
@@ -36,9 +43,14 @@ const StyledHeader = styled.header` /* TODO вынести в отдельный
     object-fit: cover;
 
     @media(min-width: 672px) {
+    width: 108px;
+    height: 17px;
+    }
+
+    /* @media(min-width: 952px) {
     width: 137px;
     height: 26px;
-    }
+    } */
   }
 `;
 

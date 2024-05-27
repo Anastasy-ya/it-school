@@ -3,9 +3,9 @@ import { createGlobalStyle } from 'styled-components';
 const GlobalStyle = createGlobalStyle`
   
 
-  ${'' /* * {
-    border: 0.5px solid red;
-  } */}
+  * {
+    border: 0.2px solid red;
+  }
 
   /*плавная прокрутка*/
   /* html {
@@ -22,7 +22,7 @@ const GlobalStyle = createGlobalStyle`
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
     -moz-text-size-adjust: 100%;
-    text-rendering: optimizeLegibility;
+    ${'' /* text-rendering: optimizeLegibility; */}
     }
 
   .page {
@@ -55,7 +55,7 @@ const GlobalStyle = createGlobalStyle`
   select {
     margin: 0;
     padding: 0;
-    font-optical-sizing: auto;
+    ${'' /* font-optical-sizing: auto; */}
     font-style: normal;
     font-family: 'Montserrat', 'Helvetica Neue', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 

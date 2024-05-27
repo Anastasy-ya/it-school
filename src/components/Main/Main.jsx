@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+// import styled from 'styled-components';
 import React, { useState, useEffect } from "react";
 import Menu from '../Menu/Menu';
 import Banner from '../Banner/Banner';

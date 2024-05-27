@@ -3,54 +3,9 @@ import React from "react";
 import { Section, Box } from '../Section/Section';
 import Card from '../Card/Card';
 import logoKamin from '../../images/logo-kamin.svg';
-import laptopIcon from '../../images/laptop-icon.svg';
-import paletteIcon from '../../images/palette-icon.svg';
-import movieIcon from '../../images/movie-icon.svg';
-import busIcon from '../../images/bus-icon.svg';
-import coffeeIcon from '../../images/coffee-icon.svg';
-import moneyIcon from '../../images/money-icon.svg';
 
-const images = [ //TODO перенести в константы
-  {
-    name: laptopIcon,
-    id: 1,
-    title: 'ОБУЧЕНИЕ',
-    subtitle: `с понедельника 
-по четверг`,
-  },
-  {
-    name: paletteIcon,
-    id: 2,
-    title: 'МАСТЕР-КЛАССЫ',
-    subtitle: `от профессионалов`,
-  },
-  {
-    name: movieIcon,
-    id: 3,
-    title: 'РАЗВЛЕЧЕНИЯ',
-    subtitle: `отдых после занятий`,
-  },
-  {
-    name: busIcon,
-    id: 4,
-    title: 'ЭКСКУРСИИ',
-    subtitle: `по пятницам`,
-  },
-  {
-    name: coffeeIcon,
-    id: 5,
-    title: 'ОБЕДЫ',
-    subtitle: `В «Крыльях»
-и «Гончаров»`,
-  },
-  {
-    name: moneyIcon,
-    id: 6,
-    title: 'ОТ 11 000 ₽',
-    subtitle: `За 3-х
-недельную смену`,
-  }
-];
+import { images } from '../constants/constants';
+
 
 const StyledTitle = styled.div`
   display: flex;
@@ -63,7 +18,12 @@ const StyledTitle = styled.div`
     height: 38px;
     object-fit: cover;
     padding: 12px 0 0 ;
-  }
+
+    @media(min-width: 672px) {
+      width: 140px;
+      /* height: 38px; */
+    }
+   }
 
   & div {
     display: flex;
@@ -76,9 +36,16 @@ const StyledTitle = styled.div`
     font-size: 32px;
     text-align: center;
     max-width: 256px;
+    text-transform: uppercase;
 
     @media(min-width: 672px) {
-      max-width: 616px;
+      max-width: 608px;/*616 delme*/
+      font-size: 40px;
+    }
+
+    @media(min-width: 952px) {
+      text-align: left;
+      font-size: 52px;
     }
   }
 
@@ -87,6 +54,11 @@ const StyledTitle = styled.div`
     font-size: 12px;
     font-weight: 400;
     max-width: 182px;
+
+    @media(min-width: 672px) {
+      max-width: 608px;
+
+    }
   }
 `
 
@@ -107,27 +79,33 @@ const StyledBanner = styled.div`
   }
 
   & h2 {
-    font-weight: 600;
+    font-weight: 700;
     font-size: 12px;
     text-align: center;
     max-width: 270px;
     line-height: 18px;
+    text-transform: uppercase;
+
+    @media(min-width: 672px) {
+      font-size: 18px;
+      max-width: 608px;/*max-width загнать в переменные и подмешать стили */
+    }
+    @media(min-width: 1136px) {
+      
+    }
   }
 `;
 
 const CardsContainer = styled.ul`
   display: flex;
   padding: 0;
-  row-gap: 30px;
-  column-gap: 24px;
+  row-gap: 32px;
+  /* column-gap: 24px; */
   flex-wrap: wrap;
-  justify-content: center;
-  justify-content: center;
+  justify-content: space-between;/* center*/
   align-content: center;
   max-width: 256px;
   
-  
-
   @media(min-width: 672px) {
     max-width: 608px;
   }
@@ -140,7 +118,8 @@ const CardsContainer = styled.ul`
 function Banner() {
 
   return (
-    <Section $backgroundImage={({ theme }) => theme.colors.gradient}>{/* ошибка в консоли*/}
+    <Section 
+      $backgroundImage={({ theme }) => theme.colors.gradient}>
       <Box>
 
         <StyledBanner>
@@ -150,7 +129,7 @@ function Banner() {
               ЛЕТНЯЯ IT&#8209;ШКОЛА
             </h1>
             <div>
-              <img alt="logo" src={logoKamin} />
+              <img alt="logo" src={logoKamin} title='logo'/>
               <h6>
                 Курсы и подготовка к экзаменам!
               </h6>

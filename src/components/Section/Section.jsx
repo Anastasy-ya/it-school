@@ -4,8 +4,10 @@ export const Section = styled.section`
   width: 100%;
   display: flex;
   justify-content: center;
-  background-color: ${props => props.$backgroundColor || 'None'};
-  background-image: ${props => props.$backgroundImage || 'None'};
+  background-color: ${props => props.$backgroundColor || 'rgba(0, 0, 0, 0);'};
+  background-image: ${props => props.$backgroundImage || 'none'};
+  margin: 0;
+  padding: 0;
 `;
 
 export const Box = styled.div`//TODO сделать переменной и подмешивать к контейнеру секции

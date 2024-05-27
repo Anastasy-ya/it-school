@@ -12,7 +12,7 @@ const Background = styled.div`
   height: 64px;
   border-radius: 15px;
   border: 2px solid white;
-  background-color: ${({ theme }) => theme.colors.mainBackground};
+  background-color: ${({ theme }) => theme.colors.lightGray};
   display: flex;
   justify-content: center;
   align-items: center;
@@ -32,6 +32,7 @@ const TextBlock = styled.div`
     font-weight: 400;
     text-align: left;
     margin-bottom: 8px;
+    text-transform: uppercase;
   }
 
   & pre {

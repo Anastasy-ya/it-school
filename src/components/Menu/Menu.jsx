@@ -6,7 +6,7 @@ const NavBackground = styled.nav`
   width: 100%;
   display: flex;
   justify-content: center;
-  background-color: ${({ theme }) => theme.colors.mainBackground};
+  background-color: ${({ theme }) => theme.colors.lightGray};
   align-items: center;
 `;
 
@@ -32,6 +32,7 @@ const MenuSection = styled.div`
     line-height: 40px;
     text-align: center;
     white-space: nowrap;
+    text-transform: uppercase;
   }
 
   & a {

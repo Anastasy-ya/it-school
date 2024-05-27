@@ -23,7 +23,7 @@ const Div = styled.nav`
 const Span = styled.span`
   /*средний штрих*/
   height: 2px;
-  width: 26px;
+  width: 16px;
   background: ${props =>
     props.$isOpenPopup ? 'transparent' : 'white'
   };
@@ -37,7 +37,7 @@ const Span = styled.span`
     position: absolute;
     content: "";
     height: 2px;
-    width: 26px;
+    width: 16px;
     background-color: white;
     transition: transform 0.25s, top 0.25s 0.25s;
     ${props => (
@@ -55,7 +55,7 @@ const Span = styled.span`
     position: absolute;
     content: "";
     height: 2px;
-    width: 26px;
+    width: 16px;
     background-color: white;
     transition: transform 0.25s, top 0.25s 0.25s;
     ${props => (

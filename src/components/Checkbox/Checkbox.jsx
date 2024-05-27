@@ -1,5 +1,6 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
+import check from '../../images/check.svg';
 
 const Container = styled.div`
   width: 100%;
@@ -7,59 +8,58 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 20px 0 30px;
-`;
-
-const Input = styled.input`
-  height: 0;
-  width: 0;
-  opacity: 0;
-  z-index: -1;
+  z-index: 1;
+  /* margin: 20px 0 30px; */
 `;
 
 const Label = styled.label` /*TODO повторяет стили для других label, создать отдельный элемент с пропсами */
   position: relative;
   cursor: ${props => (props.disabled ? "not-allowed" : "pointer")};
-  height: 32px;
+  height: 20px;
   color: ${({ theme }) => theme.colors.secondaryGray};
   font-size: 9px;
   font-weight: 700;
-  line-height: 32px;
-  transition: .5s ease;
+  line-height: 20px;
+  /* transition: .5s ease; */
   left: 10px;
   padding: 0 16px;
   box-sizing: border-box;
-`;
+  /* transition: background-size 4s ease;  */
 
-
-const Indicator = styled.div`
-  width: 20px;
-  height: 20px;
-  background-color: ${({ theme }) => theme.colors.mainBackground};
-  position: absolute;
-  top: 0em;
-  left: -1.6em;
-  border-radius: 5px;
-  margin: 6px 0;
-
-  &::after {
+    &::before {
     content: "";
     position: absolute;
-    display: none;
+    top: 0px;
+    left: -7px;
+    width: 20px;
+    height: 20px;
+    background-color: ${({ theme }) => theme.colors.lightGray};
+    border-radius: 5px;
+    transition: background-color .4s ease; 
+    background-position: center;
+    background-size: 10%;
   }
 
-  ${Input}:checked + &::after {
-    display: block;
-    top: 25%;
-    left: 25%;
-    width: 10px;
-    height: 10px;
-    background-color: ${({ theme }) => theme.colors.blue};;
-    border-radius: 50%;
-  }
-
-  &::disabled {
+  &:disabled {
     cursor: not-allowed;
+  }
+`;
+
+const Input = styled.input`
+  height: 0px;
+  width: 0px;
+  opacity: 0;
+  z-index: -1;
+  /* transition: background-size .4s ease; */
+  
+
+  &:checked + ${Label}::before {
+    background-image: url(${check});
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 50%;
+    transition: background-color .4s ease;
+    background-color: ${({ theme }) => theme.colors.blue};
   }
 `;
 
@@ -71,20 +71,29 @@ export default function Checkbox({
   disabled
 }) {
   return (
-    <Container>
-      <Label htmlFor="checkbox" disabled={disabled}>
+    <div>
+
+    
+
+      <Input
+        id="checkbox"
+        type="checkbox"
+        defaultChecked
+        name="checkbox"
+      // value={value}
+      // disabled={disabled}
+      // checked/*del me */
+      // checked={checked}
+      // onChange={onChange}
+      />
+      <Label
+        htmlFor="checkbox"
+        disabled={disabled}>
         Соглашаюсь с политикой конфиденциальности
-        <Input
-          id="checkbox"
-          type="checkbox"
-          name={name}
-          value={value}
-          disabled={disabled}
-          checked={checked}
-          onChange={onChange}
-        />
-        <Indicator />
       </Label>
-    </Container>
+      {/* <Indicator /> */}
+
+
+    </div>
   );
 }
